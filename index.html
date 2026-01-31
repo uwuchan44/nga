@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="network-header">
+            <div class="header-content">
+                <h1 class="network-title">NETWORK</h1>
+                <p class="network-subtitle">Secure Digital Network</p>
+            </div>
+        </header>
+
+        <!-- Profile Cards -->
+        <div class="profiles-grid">
+            <!-- Tokisu Profile -->
+            <div class="profile-card" data-profile="tokisu">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="profile-img-container">
+                            <div class="profile-img" style="background-image: url('img/tokisu_bild.jpg');" id="tokisuImg"></div>
+                            <div class="domain-badge" title="Exclusive Domain Available">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                        </div>
+                        <h2 class="profile-name">TOKISU</h2>
+                        <p class="profile-title">Asian Baddie-hunter</p>
+                        
+                        <div class="status">
+                            <div class="status-dot active"></div>
+                            <span class="status-text">Online</span>
+                        </div>
+
+                        <!-- Domain Mini-Info -->
+                        <div class="domain-mini-info">
+                            <div class="domain-tag">
+                                <i class="fas fa-tag"></i>
+                                <span>Premium Domain</span>
+                            </div>
+                            <p class="domain-name-small">mossad.com</p>
+                        </div>
+
+                        <div class="contact-section">
+                            <button class="read-more-btn" onclick="openProfileDetail('tokisu')">
+                                <i class="fas fa-expand-alt"></i>
+                                View Profile
+                            </button>
+                            
+                            <div class="contact-icons">
+                                <a href="https://t.me/tokisu583" target="_blank" class="contact-icon telegram-btn">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://discord.com/users/1338851224350363698" target="_blank" class="contact-icon discord-btn">
+                                    <i class="fab fa-discord"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-back">
+                        <div class="domain-offer">
+                            <h3><i class="fas fa-crown"></i> Exclusive Domain</h3>
+                            <div class="domain-card">
+                                <p class="domain-name-large">mossad.com</p>
+                                <p class="domain-price">€500,000</p>
+                                <p class="domain-note">Minimum Offer</p>
+                                <button class="inquiry-btn" onclick="openOfferPortal()">
+                                    <i class="fas fa-gavel"></i>
+                                    Submit Offer
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="access-section">
+                            <h3>Expertise</h3>
+                            <ul class="access-list">
+                                <li><i class="fas fa-code"></i> Advanced Programming</li>
+                                <li><i class="fas fa-network-wired"></i> Network Security</li>
+                                <li><i class="fas fa-shield-alt"></i> Cryptography</li>
+                                <li><i class="fas fa-globe"></i> Domain Portfolio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neon Profile -->
+            <div class="profile-card" data-profile="neon">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="profile-img-container">
+                            <div class="profile-img" style="background-image: url('img/neon_bild.jpg');" id="neonImg"></div>
+                        </div>
+                        <h2 class="profile-name">NEON</h2>
+                        <p class="profile-title">Vip </p>
+                        
+                        <div class="status">
+                            <div class="status-dot active"></div>
+                            <span class="status-text">Online</span>
+                        </div>
+
+                        <div class="contact-section">
+                            <button class="read-more-btn" onclick="openProfileDetail('neon')">
+                                <i class="fas fa-expand-alt"></i>
+                                View Profile
+                            </button>
+                            
+                            
+                                <a href="https://discord.com/users/1298660375717216256" target="_blank" class="contact-icon discord-btn">
+                                    <i class="fab fa-discord"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-back">
+                        <div class="access-section">
+                            <h3>Expertise</h3>
+                            <ul class="access-list">
+                                <li><i class="fas fa-chart-line"></i> Market Analysis</li>
+                                <li><i class="fas fa-coins"></i> Meme Coin Strategy</li>
+                                <li><i class="fas fa-project-diagram"></i> Community Building</li>
+                                <li><i class="fas fa-bullhorn"></i> Social Media Growth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Info -->
+        <footer class="system-footer">
+            <div class="system-info">
+                <div class="info-item">
+                    <span class="info-label">IP</span>
+                    <span class="info-value" id="userIP">19
+                        168.1.1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Time</span>
+                    <span class="info-value" id="currentTime">00:00:00 UTC</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value">Encrypted</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== DETAIL PROFILE VIEW ==================== -->
+    <div class="profile-detail-overlay" id="profileDetail">
+        <div class="profile-detail-container">
+            <!-- Header with Back Button and Music Control -->
+            <div class="detail-header">
+                <button class="back-btn" onclick="closeProfileDetail()">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Network
+                </button>
+                
+                <div class="music-control" id="musicControl">
+                    <i class="fas fa-music"></i>
+                    <div class="music-info">
+                        <span class="track-name" id="currentTrack">No audio playing</span>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-down" id="volumeIcon"></i>
+                            <input type="range" min="0" max="100" value="50" class="volume-slider" id="volumeSlider">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-detail-content" id="detailContent">
+                <!-- Content loaded via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OFFER PORTAL ==================== -->
+    <div class="portal-overlay" id="offerPortal">
+        <div class="portal-container">
+            <div class="portal-header">
+                <h3><i class="fas fa-gavel"></i> Domain Offer Submission</h3>
+                <button class="portal-close" onclick="closeOfferPortal()">&times;</button>
+            </div>
+            
+            <div class="portal-body">
+                <div class="domain-info-portal">
+                    <p class="domain-name-portal">mossad.com</p>
+                    <p class="domain-min-price">Minimum Offer: <strong>€500,000</strong></p>
+                </div>
+                
+                <form id="offerForm" class="offer-form">
+                    <div class="form-group">
+                        <label for="contactMethod">
+                            <i class="fas fa-user-tag"></i> Contact Method
+                        </label>
+                        <select id="contactMethod" required>
+                            <option value="">Select method</option>
+                            <option value="telegram">Telegram @</option>
+                            <option value="discord">Discord @</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-at"></i> Username
+                        </label>
+                        <input type="text" id="username" placeholder="@username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="offerAmount">
+                            <i class="fas fa-euro-sign"></i> Offer Amount (EUR)
+                        </label>
+                        <div class="amount-input">
+                            <span class="currency">€</span>
+                            <input type="number" id="offerAmount" min="500000" step="1000" placeholder="500000" required>
+                        </div>
+                        <div class="amount-validation">
+                            <span class="min-amount">Min: €500,000</span>
+                            <span class="current-offer" id="currentOffer">€0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i> Additional Notes (Optional)
+                        </label>
+                        <textarea id="message" rows="3" placeholder="Any additional information..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeOfferPortal()">
+                            Cancel
+                        </button>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Offer
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="portal-disclaimer">
+                    <p><i class="fas fa-shield-alt"></i> All submissions are encrypted and confidential</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== OFFER SUCCESS ==================== -->
+    <div class="success-overlay" id="successPortal">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="success-content">
+                <h3>Offer Submitted Successfully</h3>
+                <p class="success-message">
+                    Your offer for <strong>mossad.com</strong> has been received.
+                </p>
+                <div class="offer-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Amount:</span>
+                        <span class="detail-value" id="submittedAmount">€0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Contact:</span>
+                        <span class="detail-value" id="submittedContact">@username</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Reference:</span>
+                        <span class="detail-value" id="referenceId">#000000</span>
+                    </div>
+                </div>
+                <div class="success-note">
+                    <p><i class="fas fa-clock"></i> You will be contacted within 24 hours if your offer is accepted.</p>
+                    <p><i class="fas fa-lock"></i> All communications remain confidential.</p>
+                </div>
+                <button class="close-success-btn" onclick="closeSuccessPortal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="profileAudio" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
